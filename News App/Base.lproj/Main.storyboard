@@ -1,24 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rjN-VX-515">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--News App-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewsVC" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p3O-HU-nf2"/>
+                        <viewControllerLayoutGuide type="bottom" id="BFp-b1-DaX"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pPk-tS-rza">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="208" id="UZY-fF-Z5D" customClass="NewsCell" customModule="News_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="208"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UZY-fF-Z5D" id="rZ4-cW-mfo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SH7-T2-TS5">
+                                                    <rect key="frame" x="10" y="5" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="dZw-k2-vr7"/>
+                                                        <constraint firstAttribute="width" constant="100" id="oQj-Y5-gcA"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="DHS-eZ-jlv">
+                                                    <rect key="frame" x="120" y="5" width="245" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Traders Discuss Bitcoin Price Direction After $11.4K BTC Rally" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRe-Gc-kIa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="245" height="79"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-07-28T16:13:00Z" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsw-fg-106">
+                                                            <rect key="frame" x="0.0" y="79" width="245" height="21"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="eS9-t8-R5F"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The price of Bitcoin surpassed $11,400 in an overnight rally as traders are unsure of where BTC will go next." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRj-Ug-bj1">
+                                                    <rect key="frame" x="10" y="110" width="355" height="92.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DHS-eZ-jlv" firstAttribute="leading" secondItem="SH7-T2-TS5" secondAttribute="trailing" constant="10" id="3kK-yh-Pvm"/>
+                                                <constraint firstItem="mRj-Ug-bj1" firstAttribute="leading" secondItem="rZ4-cW-mfo" secondAttribute="leading" constant="10" id="5m9-11-2Gt"/>
+                                                <constraint firstAttribute="trailing" secondItem="DHS-eZ-jlv" secondAttribute="trailing" constant="10" id="8jS-Nt-Lfa"/>
+                                                <constraint firstAttribute="bottom" secondItem="mRj-Ug-bj1" secondAttribute="bottom" constant="5" id="EMe-LB-dUu"/>
+                                                <constraint firstItem="mRj-Ug-bj1" firstAttribute="top" secondItem="SH7-T2-TS5" secondAttribute="bottom" constant="5" id="PnN-zd-aD8"/>
+                                                <constraint firstItem="DHS-eZ-jlv" firstAttribute="top" secondItem="rZ4-cW-mfo" secondAttribute="top" constant="5" id="dWQ-KX-2QW"/>
+                                                <constraint firstAttribute="trailing" secondItem="mRj-Ug-bj1" secondAttribute="trailing" constant="10" id="eQi-M3-q4d"/>
+                                                <constraint firstItem="SH7-T2-TS5" firstAttribute="leading" secondItem="rZ4-cW-mfo" secondAttribute="leading" constant="10" id="nrG-oU-bHM"/>
+                                                <constraint firstItem="SH7-T2-TS5" firstAttribute="top" secondItem="rZ4-cW-mfo" secondAttribute="top" constant="5" id="vDK-Yn-ekR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.038981250010000003" green="0.060974976039999997" blue="0.11195272840000001" alpha="0.69793450339999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="descriptionLbl" destination="mRj-Ug-bj1" id="g7M-ty-XxD"/>
+                                            <outlet property="imageCell" destination="SH7-T2-TS5" id="jZy-nv-yhe"/>
+                                            <outlet property="publishedAtLbl" destination="jsw-fg-106" id="8Cl-iG-aAU"/>
+                                            <outlet property="titleLbl" destination="sRe-Gc-kIa" id="0dV-Ff-quu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="pPk-tS-rza" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HJV-B6-Xbj"/>
+                            <constraint firstItem="pPk-tS-rza" firstAttribute="top" secondItem="p3O-HU-nf2" secondAttribute="bottom" id="IdO-St-kyr"/>
+                            <constraint firstAttribute="trailing" secondItem="pPk-tS-rza" secondAttribute="trailing" id="RcF-00-inl"/>
+                            <constraint firstItem="BFp-b1-DaX" firstAttribute="top" secondItem="pPk-tS-rza" secondAttribute="bottom" id="UZe-9Q-tEs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="News App" id="AZ4-g1-ktq"/>
+                    <connections>
+                        <outlet property="tableView" destination="pPk-tS-rza" id="JIi-go-aTM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o0E-Dd-LkN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rjN-VX-515" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jR3-Wb-e2N">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NNC-XR-kUB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbm-cM-2sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="118"/>
         </scene>
     </scenes>
 </document>
